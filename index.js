@@ -163,7 +163,7 @@ function clearList() {
     let items = localStorage.getItem('items');
     if(items){
         localStorage.clear();
-
+        window.location.reload()
     }else{
         alert('Nothing to clear')
     }
@@ -173,6 +173,6 @@ function clearList() {
 
 document.querySelector('.remove__btn').addEventListener('click',(e)=>{
     clearList()
-    window.location.reload()
+
 
 })
