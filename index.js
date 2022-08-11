@@ -60,7 +60,7 @@ function showLocalStorageData() {
             </div>
           </div>
           <div class="item-amount ${item.type === '+' ? 'income-amount' : 'expense-amount'}">
-            <p>${item.type}$${item.amount}</p>
+            <p>${item.type}₵${item.amount}</p>
           </div>
         </div>
 
