@@ -159,3 +159,20 @@ function totalBalance() {
 }
 
 console.log(totalBalance())
+function clearList() {
+    let items = localStorage.getItem('items');
+    if(items){
+        localStorage.clear();
+
+    }else{
+        alert('Nothing to clear')
+    }
+
+
+}
+
+document.querySelector('.remove__btn').addEventListener('click',(e)=>{
+    clearList()
+    window.location.reload()
+
+})

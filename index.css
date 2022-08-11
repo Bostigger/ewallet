@@ -285,7 +285,29 @@ header .ewalletLogo h1 {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
+.remove__btn {
+  font-size: 3.5rem;
+  background: none;
+  border: none;
+  color: #b9283e;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.1;
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
 .add__btn:active {
   -webkit-transform: translateY(2px);
       -ms-transform: translateY(2px);
