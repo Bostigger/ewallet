@@ -4,9 +4,9 @@
 const totalIncome = calculateTotalIncome()
 const totalExpense = calculateTotalExpense()
 const balance = totalBalance();
-document.querySelector('.income__amount').children[0].innerText= '$'+totalIncome;
-document.querySelector('.expense__amount').children[0].innerText='$'+totalExpense;
-document.querySelector('.balance__amount').children[0].innerText='$'+balance;
+document.querySelector('.income__amount').children[0].innerText= '₵'+totalIncome;
+document.querySelector('.expense__amount').children[0].innerText='₵'+totalExpense;
+document.querySelector('.balance__amount').children[0].innerText='₵'+balance;
 function getFormattedData() {
     const now = new Date().toLocaleTimeString(
         'en-us',{
@@ -99,9 +99,9 @@ function addNewItem(type,amount,description) {
     const totalIncome = calculateTotalIncome()
     const totalExpense = calculateTotalExpense()
     console.log(totalIncome)
-    document.querySelector('.income__amount').children[0].innerText='$'+totalIncome;
-    document.querySelector('.expense__amount').children[0].innerText='$'+totalExpense;
-    document.querySelector('.balance__amount').children[0].innerText='$'+balance;
+    document.querySelector('.income__amount').children[0].innerText='₵'+totalIncome;
+    document.querySelector('.expense__amount').children[0].innerText='₵'+totalExpense;
+    document.querySelector('.balance__amount').children[0].innerText='₵'+balance;
 
 }
 
@@ -164,6 +164,7 @@ function clearList() {
     if(items){
         localStorage.clear();
         window.location.reload()
+
     }else{
         alert('Nothing to clear')
     }
