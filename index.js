@@ -32,7 +32,7 @@ document.querySelector('#ewallet-form').addEventListener('submit',(e)=>{
     const description = document.querySelector('.add__description').value;
     const type = document.querySelector('.add__type').value;
     if(amount.length===0 || description.length===0){
-        alert('Amout or Description can not be empty')
+        alert('Amount or Description can not be empty')
     }else {
 
         document.querySelector('#ewallet-form').reset()
@@ -86,7 +86,7 @@ function addNewItem(type,amount,description) {
             </div>
           </div>
           <div class="item-amount ${type === '+' ? 'income-amount' : 'expense-amount'}">
-            <p>${type}$${amount}</p>
+            <p>${type}₵${amount}</p>
           </div>
         </div>
 
