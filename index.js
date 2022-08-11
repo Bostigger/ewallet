@@ -48,19 +48,23 @@ showLocalStorageData();
 function showLocalStorageData() {
     const ListCollection = document.querySelector('.collection');
     const items = getItemsFromLs();
-    for (let item of items){
+    for (let item in items){
+        console.log(item)
         const listHtml = `
   <div class="item">
           <div class="item-description-time">
             <div class="item-description">
-              <p>${item.description}</p>
+              <p>${items[item].description}</p>
             </div>
             <div class="item-time">
-              <p>${item.time}</p>
+              <p>${items[item].time}</p>
             </div>
           </div>
-          <div class="item-amount ${item.type === '+' ? 'income-amount' : 'expense-amount'}">
-            <p>${item.type}₵${item.amount}</p>
+          <div class="item-amount ${items[item].type === '+' ? 'income-amount' : 'expense-amount'}">
+            <p>${items[item].type}₵${items[item].amount} <span onclick="removeItem(${item})">
+              <ion-icon name='remove-circle-outline'></ion-icon>
+             </span></p>
+           
           </div>
         </div>
 
@@ -70,6 +74,21 @@ function showLocalStorageData() {
 
 }
 
+function removeItem(id) {
+    let items = localStorage.getItem('items');
+
+    if(items){
+        let formatItems = JSON.parse(items)
+       formatItems.splice(id,1)
+        let newList = JSON.stringify(formatItems);
+        localStorage.clear()
+        localStorage.setItem('items',newList)
+        window.location.reload()
+        console.log(newList)
+
+    }
+
+}
 
 function addNewItem(type,amount,description) {
 
@@ -88,6 +107,7 @@ function addNewItem(type,amount,description) {
           <div class="item-amount ${type === '+' ? 'income-amount' : 'expense-amount'}">
             <p>${type}₵${amount}</p>
           </div>
+         
         </div>
 
 `
